@@ -83,7 +83,7 @@
 	<section id="section">
 		<h2>교과목 수정</h2>
 		<form action="subModify.jsp" name="subject" method="post" onsubmit="return chkVal()">
-			<table class="inTable">
+			<table class="subTable">
 				<tr>
 					<th>교과목 코드</th>
 					<td><input type="text" name="sub_id" size="50"
@@ -123,20 +123,12 @@
 				<tr>
 					<th>요일</th>
 					<td>
-						<%
-							char[] day = { '월', '화', '수', '목', '금', '토' };
-							for (int i = 1; i < 7; i++) {
-								if (rs.getInt("week") == i) {
-						%>
-									<input type="radio" name="week" value="<%=i%>" checked><span><%=day[i - 1]%></span>
-						<%
-								} else {
-						%>
-									<input type="radio" name="week" value="<%=i%>"><span><%=day[i - 1]%></span>
-						<%
-								}
-							}
-						%>
+						<input type="radio" name="week" value="1" <%= rs.getString("week").equals("1")?"checked":"" %>><span> 월</span>
+						<input type="radio" name="week" value="2" <%= rs.getString("week").equals("2")?"checked":"" %>><span> 화</span>
+						<input type="radio" name="week" value="3" <%= rs.getString("week").equals("3")?"checked":"" %>><span> 수</span>
+						<input type="radio" name="week" value="4" <%= rs.getString("week").equals("4")?"checked":"" %>><span> 목</span>
+						<input type="radio" name="week" value="5" <%= rs.getString("week").equals("5")?"checked":"" %>><span> 금</span>
+						<input type="radio" name="week" value="6" <%= rs.getString("week").equals("6")?"checked":"" %>><span> 토</span>
 					</td>
 				</tr>
 				<tr>
