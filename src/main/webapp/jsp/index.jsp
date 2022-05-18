@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>수강신청 도우미</title>
 <link rel="stylesheet" href="../css/style.css?ver=1">
 </head>
 <body>
